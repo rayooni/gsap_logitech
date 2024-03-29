@@ -41,4 +41,89 @@ window.addEventListener('DOMContentLoaded', function () {
   // side image move half left and right
   const sideImgW = $('.star div:nth-child(1)').width();
   $('.side').css('width', `calc(100% + ${sideImgW}px)`);
+
+  // Section 01 Scroll Animation
+  let tit = gsap.timeline(); // to , from , fromTo 등의 애니메이션 효과를 생성
+  ScrollTrigger.create({
+    animation: tit,
+    trigger: '.trigger-this-1',
+    start: 'top top',
+    end: 'bottom bottom',
+    scrub: 1.8, // 마우스 이동후 .8초 정도 지연
+  });
+
+  tit
+    .add('s1') // s1 이라는 이름을 지어서 첫번쨰 효과로 지정
+    .to('.main_title_01', { opacity: 0, y: -100, duration: 4 }, 's1')
+
+    .add('s2') // s2 이라는 이름을 지어서 첫번쨰 효과로 지정
+    .to('.main_title_02', { opacity: 1, y: -50, duration: 4 }, 's2')
+    .to('.main_title_02', { opacity: 0, y: -100, duration: 4 })
+
+    .add('s3') // s3 이라는 이름을 지어서 첫번쨰 효과로 지정
+    .to('.main_title_03', { opacity: 1, y: -50, duration: 4 }, 's3')
+    .to('.main_title_03', { opacity: 0, y: -100, duration: 4 });
+
+  gsap.to('.fix-this-1', {
+    scrollTrigger: {
+      trigger: '.trigger-this-1',
+      start: 'top top', // 앞의 값: trigger에 적용되어 있는 요소의 위치, 뒤의 값: 화면의 위치표시
+      end: 'bottom bottom',
+      scrub: true,
+      markers: true,
+      pin: true, // trigger에 지정된 요소의 크기만큼 화면을 고정
+    },
+  });
+
+  //section 02 animation
+  gsap.to('#section02 .we', {
+    scrollTrigger: {
+      trigger: '.trigger-this-we',
+      start: 'top top', // 앞의 값: trigger에 적용되어 있는 요소의 위치, 뒤의 값: 화면의 위치표시
+      end: '110% bottom',
+      scrub: true,
+      // markers: true,
+      pin: true, // trigger에 지정된 요소의 크기만큼 화면을 고정
+    },
+  });
+
+  gsap.to('#section02 .we img', {
+    y: 250,
+    scrollTrigger: {
+      trigger: '#section02',
+      start: 'top top',
+      end: 'bottom bottom',
+      scrub: true,
+      // markers: true,
+    },
+  });
+
+  gsap.to('.fix-this-2', {
+    scrollTrigger: {
+      trigger: '.trigger-this-2',
+      start: 'top top',
+      end: 'bottom bottom',
+      scrub: true,
+      // markers: true,
+      pin: true,
+    },
+  });
+
+  let sec02 = gsap.timeline();
+  ScrollTrigger.create({
+    animation: sec02,
+    trigger: '#section02',
+    start: '500 top',
+    end: 'bottom bottom',
+    scrub: 1,
+    markers: true,
+  });
+
+  sec02.to('#section02 .left', { x: -1000, y: 0, rotation: 0 }, 0);
+  sec02.to('#section02 .star03', { x: 1000, y: 0, rotation: 0 }, 0);
+  sec02.to('#section02 .keyboard', { x: 2400, y: 0, rotation: 0 }, 0);
+
+  sec02.to('#section02 .create', { x: 2300, y: 0, rotation: 0 }, 0);
+  sec02.to('#section02 .title02', { x: 1000, y: 0, rotation: 0 }, 0);
+  sec02.to('#section02 .connect', { x: 2400, y: 0, rotation: 0 }, 0);
 });
