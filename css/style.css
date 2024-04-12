@@ -392,3 +392,77 @@
     transform: rotate(-360deg);
   }
 }
+
+/* Section 03 style */
+#section03 {
+  height: 1372px;
+  position: relative;
+  background: #000;
+}
+
+#section03 .visual_container {
+  width: 840px;
+  height: 732px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#section03 .visual_container .title {
+  position: relative;
+  text-align: center;
+}
+
+#section03 .visual_container .title .title02 {
+  display: flex;
+  justify-content: right;
+  align-items: flex-end;
+  margin: 0 85px -20px 0;
+}
+
+#section03 .visual_container .title .title02 .keep {
+  margin-left: 173px;
+}
+
+#section03 .visual_container .title .title02 .logitech {
+  margin-bottom: 14px;
+}
+
+#section03 .visual_container .title .design03 {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+#section03 .visual_container .title .box {
+  width: 0px;
+  height: 35px;
+  text-align: right;
+  margin: 0 0 -90px 355px;
+  background: #4274ff;
+  transition: all 1s;
+}
+
+#section03.on .visual_container .title .box {
+  width: 470px;
+}
+
+#section03 .visual_container .title .center {
+  text-align: right;
+  margin: 0 32px 10px;
+}
+
+#section03 .visual_container .title .of {
+  text-align: right;
+  margin: 0 100px 150px;
+}
+
+#section03 .visual_container .title .subtxt {
+  position: absolute;
+  top: 240px;
+  left: 36px;
+}
+
+#section03 .visual_container .longtext {
+  text-align: center;
+}
