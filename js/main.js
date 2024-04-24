@@ -324,7 +324,7 @@ window.addEventListener('DOMContentLoaded', function () {
       trigger: '#section05',
       start: '4500 top',
       scrub: true,
-      markers: true,
+      // markers: true,
       onEnter: () => {
         video05.play();
       },
@@ -335,4 +335,41 @@ window.addEventListener('DOMContentLoaded', function () {
       },
     },
   });
+
+  // section06 화면 위치시 글자 슬라이드 업
+  gsap.to('#section06', {
+    scrollTrigger: {
+      trigger: '#section06',
+      start: 'top top',
+      pin: true,
+      scrub: true,
+      toggleClass: 'on',
+      // markers: true,
+    },
+  });
+
+  // section06 화면 위치시 스크롤 고정
+  gsap.to('.fix-this-6', {
+    scrollTrigger: {
+      trigger: '.trigger-this-6',
+      start: 'top top',
+      end: 'bottom bottom',
+      pin: true,
+      // markers: true,
+    },
+  });
+
+  let sec06 = gsap.timeline();
+  ScrollTrigger.create({
+    animation: sec06,
+    trigger: '#section06',
+    start: 'top top',
+    end: 'bottom bottom',
+    scrub: true,
+    markers: true,
+  });
+
+  sec06.to('#section06 .side .left', { x: -1000 }, 0);
+  sec06.to('#section06 .side .right', { x: 1000 }, 0);
+  sec06.to('#section06 .underbar', { y: 1000 }, 0);
 });
