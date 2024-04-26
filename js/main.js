@@ -40,7 +40,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
   // side image move half left and right
   const sideImgW = $('.star div:nth-child(1)').width();
-  $('.side').css('width', `calc(100% + ${sideImgW}px)`);
+  // $('.side').css('width', `calc(100% + ${sideImgW}px)`); //보류
 
   // Section 01 Scroll Animation
   let tit = gsap.timeline(); // to , from , fromTo 등의 애니메이션 효과를 생성
@@ -341,7 +341,7 @@ window.addEventListener('DOMContentLoaded', function () {
     scrollTrigger: {
       trigger: '#section06',
       start: 'top top',
-      pin: true,
+      // pin: true,
       scrub: true,
       toggleClass: 'on',
       // markers: true,
@@ -366,10 +366,226 @@ window.addEventListener('DOMContentLoaded', function () {
     start: 'top top',
     end: 'bottom bottom',
     scrub: true,
-    markers: true,
+    // markers: true,
   });
 
   sec06.to('#section06 .side .left', { x: -1000 }, 0);
   sec06.to('#section06 .side .right', { x: 1000 }, 0);
   sec06.to('#section06 .underbar', { y: 1000 }, 0);
+
+  //section 06 chapter image move animation
+  gsap.to('#section06 .visual_container .chapter', {
+    x: 468,
+    scrollTrigger: {
+      trigger: '#section06',
+      start: '1200 top',
+      end: '5000 bottom',
+      scrub: true,
+      // markers: true,
+    },
+  });
+
+  //section 06 square height 0 animation
+  gsap.to('#section06 .visual_container .square>div', {
+    height: 0,
+    scrollTrigger: {
+      trigger: '#section06',
+      start: '1200 top',
+      end: '7000 bottom',
+      scrub: true,
+      // markers: true,
+    },
+  });
+
+  //section 06 square height 0 animation
+  gsap.to('#section06 .visual_container .title', {
+    x: 180,
+    scrollTrigger: {
+      trigger: '#section06',
+      start: '1200 top',
+      end: '5000 bottom',
+      scrub: true,
+      // markers: true,
+    },
+  });
+
+  //section 06 square height 0 animation
+  gsap.to('#section06 .visual_container .headset', {
+    x: 1800,
+    scrollTrigger: {
+      trigger: '#section06',
+      start: '1200 top',
+      end: 'bottom bottom',
+      scrub: true,
+      // markers: true,
+    },
+  });
+
+  //section 06 title text scale up animation
+  gsap.to('#title_svg', {
+    scale: 60,
+    x: -206,
+    y: 2400,
+    scrollTrigger: {
+      trigger: '#section06',
+      start: '5000 top',
+      end: 'bottom bottom',
+      scrub: true,
+      // markers: true,
+    },
+  });
+
+  //section07 video controll animation
+  const video07 = this.document.querySelector('#sc07_video');
+  gsap.to('#section07', {
+    scrollTrigger: {
+      trigger: '#section07',
+      start: 'top top',
+      scrub: true,
+      toggleClass: 'on',
+      // markers: true,
+      onEnter: () => {
+        video07.play();
+        $('#section07 .side').addClass('on');
+        $('#header').addClass('on');
+      },
+      onLeaveBack: () => {
+        video07.currentTime = 0;
+        $('#sectioon07 .side').removeClass('on');
+        $('#header').removeClass('on');
+      },
+    },
+  });
+
+  //section07 fix on scroll
+  gsap.to('.fix-this-7', {
+    scrollTrigger: {
+      trigger: '.trigger-this-7',
+      start: 'top top',
+      end: 'bottom bottom',
+      pin: true,
+      scrub: true,
+      // markers: true,
+    },
+  });
+
+  //section07 video scale down animation
+  gsap.to('#section07 .video', {
+    scale: 0.8,
+    y: 15,
+    scrollTrigger: {
+      trigger: '#section07',
+      start: '1000 top',
+      end: 'bottom bottom',
+      scrub: true,
+      // markers: true,
+    },
+  });
+
+  //section07 side image remove class on animation
+  gsap.to('#section07 .side', {
+    scrollTrigger: {
+      trigger: '#section07',
+      start: '1800 top',
+      end: 'bottom bottom',
+      scrub: true,
+      // markers: true,
+      onEnter: () => {
+        // 스크롤이 트리거 요소의 시작 위치에 도달했을 때
+        $('#section07 .side').removeClass('on');
+      },
+      // onEnterBack: () => {
+      //   // 스크롤이 트리거 요소의 시작 위치에 역방향으로 도달했을 때
+      //   $('#section07 .side').addClass('on');
+      // },
+      // onLeave: () => {
+      //   // 스크롤이 트리거 요소의 끝 위치에 지났을 때
+      //   $('#sectioon07 .side').removeClass('on');
+      // },
+      onLeaveBack: () => {
+        // 스크롤이 트리거 요소의 끝 위치에 역방향으로 지났을 때
+        $('#section07 .side').addClass('on');
+      },
+    },
+  });
+
+  // section08, 09 title text slide up animation
+  function section0809Title(section, position) {
+    gsap.to(section, {
+      scrollTrigger: {
+        trigger: section,
+        start: `${position} top`,
+        scrub: true,
+        // markers: true,
+        toggleClass: 'on',
+      },
+    });
+  }
+
+  section0809Title('#section08', '-300');
+  section0809Title('#section09', '-500');
+
+  // section091 header remove class on
+  gsap.to('.fix-this-91', {
+    scrollTrigger: {
+      trigger: '.trigger-this-91',
+      start: 'top top',
+      end: 'bottom bottom',
+      scrub: true,
+      pin: true,
+      // markers: true,
+      onEnter: () => {
+        $('#header').removeClass('on');
+      },
+      onLeaveBack: () => {
+        $('#header').addClass('on');
+      },
+    },
+  });
+
+  // section091 title text slide up animation
+  gsap.to('#section091', {
+    scrollTrigger: {
+      trigger: '#section091',
+      start: '-300 top',
+      toggleClass: 'on',
+      scrub: true,
+      // markers: true,
+    },
+  });
+
+  // section091 mouse image animation
+  gsap.to('#section091 .mouse', {
+    x: 0,
+    y: -2000,
+    rotation: 90,
+    scrollTrigger: {
+      trigger: '#section091',
+      start: '500 top',
+      scrub: true,
+      // markers: true,
+    },
+  });
+
+  // section 10 horizontal scroll animation
+  const section10pages = this.document.querySelectorAll('#section10 .page');
+  // console.log(section10pages);
+  let sec10_total = 0;
+
+  section10pages.forEach((section) => {
+    sec10_total += section.clientWidth; // 각각의 page 가로크기 형성
+  });
+  // console.log(sec10_total);
+
+  gsap.to('.fix-this-10', {
+    x: -(sec10_total - innerWidth),
+    scrollTrigger: {
+      trigger: '.trigger-this-10',
+      start: 'top top',
+      end: 'bottom bottom',
+      pin: true,
+      scrub: true,
+      // markers: true,
+    },
+  });
 });
