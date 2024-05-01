@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Logitech</title>
     <link rel="stylesheet" href="css/plugin/reset.css" />
     <link rel="stylesheet" href="css/plugin/common.css" />
     <link rel="stylesheet" href="css/style.css" />
@@ -12,20 +11,21 @@
     <script src="js/plugin/easing.js"></script>
     <title>Logitech | Welcome</title>
   </head>
-
   <body>
     <div id="cursor">
       <div class="dot"></div>
     </div>
 
-    <div class="video_section">
+    <div class="video-section">
       <div class="video">
         <video src="video/video01.mp4" autoplay loop muted></video>
       </div>
     </div>
 
     <header id="header" class="">
-      <div><img src="img/scroll_01/header/header_scroll.png" alt="" /></div>
+      <div>
+        <img src="img/scroll_01/header/header_scroll.png" alt="" />
+      </div>
       <div class="logo cursor_effect">
         <img src="img/scroll_01/header/header_logo.png" alt="" />
       </div>
@@ -34,7 +34,7 @@
       </div>
     </header>
 
-    <!-- menu -->
+    <!-- Menu -->
     <div id="menu">
       <div class="menu_header">
         <div>
@@ -135,13 +135,11 @@
         </div>
       </div>
 
-      <div class="underbar">
-        <img src="img/menu/underbar.png" alt="" />
-      </div>
+      <div class="underbar"><img src="img/menu/underbar.png" alt="" /></div>
     </div>
 
     <!-- Main Sections -->
-    <section id="container">
+    <section id="container" class="container">
       <section id="section01">
         <div class="trigger-this-1">
           <div class="fix-this-1">
@@ -164,6 +162,7 @@
             <img src="img/scroll_01/section02/we.png" alt="" />
           </div>
         </div>
+
         <div class="trigger-this-2">
           <div class="fix-this-2">
             <div class="left">
@@ -175,9 +174,11 @@
               </div>
               <div><img src="img/scroll_01/section02/dot.png" alt="" /></div>
             </div>
+
             <div class="star03">
               <img src="img/scroll_01/etc/01_star.png" alt="" />
             </div>
+
             <div class="title">
               <div class="create">
                 <img src="img/scroll_01/section02/create.png" alt="" />
@@ -194,6 +195,7 @@
                 <img src="img/scroll_01/section02/connect.png" alt="" />
               </div>
             </div>
+
             <div class="back">
               <div class="bigtxt">
                 <div class="big01">
@@ -213,6 +215,7 @@
                     <img src="img/scroll_01/section02/since1989_e.png" alt="" />
                   </div>
                 </div>
+
                 <div class="big02">
                   <div class="no_1">
                     <img src="img/scroll_01/section02/since1989_1.png" alt="" />
@@ -228,10 +231,12 @@
                   </div>
                 </div>
               </div>
+
               <div class="underline">
                 <img src="img/scroll_01/section02/underline.png" alt="" />
               </div>
             </div>
+
             <div class="keyboard">
               <img src="img/scroll_01/section02/keyboard.png" alt="" />
             </div>
@@ -311,7 +316,7 @@
         </div>
       </section>
 
-      <section id="section05" class="on">
+      <section id="section05" class="">
         <div class="trigger-this-5">
           <div class="underbar">
             <img src="img/scroll_01/section05/underbar.png" alt="" />
@@ -324,7 +329,6 @@
                 <div class="logo">
                   <img src="img/scroll_01/section05/logo.png" alt="" />
                 </div>
-
                 <div class="keyboard">
                   <img src="img/scroll_01/section05/keyboard.png" alt="" />
                 </div>
@@ -1023,7 +1027,6 @@
                 loop
                 muted
               ></video>
-              <!--            <img src="img/scroll_03/section04/video.jpg" alt="">-->
             </div>
 
             <div class="side">
@@ -1171,7 +1174,7 @@
               </div>
             </div>
 
-            <div class="page page03 on">
+            <div class="page page03">
               <div class="side">
                 <div class="left">
                   <img src="img/scroll_04/section03/side01.png" alt="" />
@@ -1255,7 +1258,7 @@
               </div>
 
               <div class="visual_container">
-                <div class="container01 on">
+                <div class="container01">
                   <div class="title">
                     <div>
                       <img src="img/scroll_04/section05/title01.png" alt="" />
@@ -1275,7 +1278,7 @@
                   </div>
                 </div>
 
-                <div class="container02 on">
+                <div class="container02">
                   <div class="title">
                     <div>
                       <img src="img/scroll_04/section05/title02.png" alt="" />
@@ -1295,7 +1298,7 @@
                   </div>
                 </div>
 
-                <div class="container03 on">
+                <div class="container03">
                   <div class="title">
                     <div>
                       <img src="img/scroll_04/section05/title03.png" alt="" />
@@ -1403,16 +1406,16 @@
     </section>
 
     <script>
-      let scene = document.getElementById('menu');
-      let parallax = new Parallax(scene);
+      var scene = document.getElementById('menu');
+      var parallax = new Parallax(scene);
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <!-- <script src="js/plugin/gsap.js"></script>
-   <script src="js/plugin/scrollTrigger.js"></script> -->
-    <!-- <script src="js/scrollbar.js"></script> -->
-    <!-- <script src="js/setting.js"></script> -->
+    <script src="js/plugin/scrollTrigger.js"></script> -->
+    <script src="js/scrollbar.js"></script>
+    <script src="js/setting.js"></script>
     <script src="js/main.js"></script>
   </body>
 </html>
